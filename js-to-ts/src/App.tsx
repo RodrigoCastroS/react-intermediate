@@ -5,6 +5,7 @@ import { useState } from "react";
 import AdoptedPetContext from "./AdoptedPetContext";
 import Details from "./Details";
 import SearchParams from "./SearchParams";
+import { Pet } from "./APIResponsesTypes";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -16,7 +17,7 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-  const adoptedPet = useState(null);
+  const adoptedPet = useState(null as Pet | null);
   return (
     <div>
       <BrowserRouter>
@@ -37,5 +38,7 @@ const App = () => {
 };
 
 const container = document.getElementById("root");
+if (!container) throw new Error("No container to run the app");
+
 const root = createRoot(container);
 root.render(<App />);
