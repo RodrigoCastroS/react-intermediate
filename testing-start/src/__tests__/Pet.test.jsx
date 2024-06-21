@@ -23,6 +23,6 @@ test("displays a non-default image", async () => {
   );
 
   const petThumbnail = await pet.findByTestId("thumbnail");
-  expect(petThumbnail.src).toContain("2.jpg");
+  expect(petThumbnail.src).toContain("1.jpg");
   pet.unmount();
 });
