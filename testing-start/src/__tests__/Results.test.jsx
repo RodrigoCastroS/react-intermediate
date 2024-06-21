@@ -122,6 +122,12 @@ const pets = [
   },
 ];
 
+// Creating snapshots might not be the best way to test
+// The text in the components might change over time, as well the color of
+// the components
+
+// Probably a good example to test it could be the shape of a JSON response from an API
+
 test("renders correctly with no pets", () => {
   const { asFragment } = render(<Results pets={[]} />);
   expect(asFragment()).toMatchSnapshot();
